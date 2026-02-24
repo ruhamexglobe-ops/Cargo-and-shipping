@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exglobe Private Limited | Global Cargo Shipping</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background: #0b3c5d;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(11,60,93,0.8), rgba(11,60,93,0.8)),
+                        url('https://images.unsplash.com/photo-1541976844346-f18aeac57b06');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .hero button {
+            padding: 12px 25px;
+            background: #ff9800;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hero button:hover {
+            background: #e68900;
+        }
+
+        section {
+            padding: 60px 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .service-box {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .service-box h3 {
+            margin-bottom: 10px;
+            color: #0b3c5d;
+        }
+
+        .tracking {
+            background: #ffffff;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .tracking input {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .tracking button {
+            padding: 12px 20px;
+            background: #0b3c5d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #0b3c5d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Exglobe Private Limited</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#tracking">Tracking</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>Global Cargo & Logistics Solutions</h2>
+    <p>Fast, secure, and reliable shipping across the globe</p>
+    <button onclick="scrollToTracking()">Track Your Cargo</button>
+</div>
+
+<section id="services">
+    <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Complete logistics solutions under one roof</p>
+    </div>
+
+    <div class="services">
+        <div class="service-box">
+            <h3>Sea Freight</h3>
+            <p>Cost-effective ocean cargo shipping worldwide.</p>
+        </div>
+        <div class="service-box">
+            <h3>Air Freight</h3>
+            <p>Fast and secure air cargo delivery.</p>
+        </div>
+        <div class="service-box">
+            <h3>Land Transport</h3>
+            <p>Reliable domestic and cross-border transport.</p>
+        </div>
+        <div class="service-box">
+            <h3>Warehousing</h3>
+            <p>Safe storage and inventory management.</p>
+        </div>
+    </div>
+</section>
+
+<section id="tracking">
+    <div class="section-title">
+        <h2>Track Your Shipment</h2>
+        <p>Enter your tracking number below</p>
+    </div>
+
+    <div class="tracking">
+        <input type="text" id="trackingNumber" placeholder="Enter Tracking Number">
+        <button onclick="trackShipment()">Track Now</button>
+        <p id="trackingResult"></p>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Email: info@exglobe.com | Phone: +94 7X XXX XXXX</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Exglobe Private Limited. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function trackShipment() {
+        const trackingNo = document.getElementById("trackingNumber").value;
+        const result = document.getElementById("trackingResult");
+
+        if (trackingNo === "") {
+            result.style.color = "red";
+            result.innerText = "Please enter a tracking number.";
+        } else {
+            result.style.color = "green";
+            result.innerText = "Shipment " + trackingNo + " is currently in transit.";
+        }
+    }
+
+    function scrollToTracking() {
+        document.getElementById("tracking").scrollIntoView({ behavior: "smooth" });
+    }
+</script>
+
+</body>
+</html>
